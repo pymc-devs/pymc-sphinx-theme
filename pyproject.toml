@@ -1,0 +1,42 @@
+[build-system]
+requires = ["flit_core >=3.4,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "pymc-sphinx-theme"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {file = "LICENSE"}
+authors = [
+    {name = "PyMC Team", email = "pymc.devs@gmail.com"}
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+dynamic = ["version", "description"]
+dependencies = [
+  "pydata-sphinx-theme>=0.12.0dev0",
+]
+
+[tool.flit.module]
+name = "pymc_sphinx_theme"
+
+[project.entry-points."sphinx.html_themes"]
+pymc_sphinx_theme = "pymc_sphinx_theme"
+
+[project.urls]
+source = "https://github.com/pymc-devs/pymc-sphinx-theme"
+tracker = "https://github.com/pymc-devs/pymc-sphinx-theme/issues"
+documentation = "https://www.pymc.io"
+
+[tool.isort]
+profile = "black"
