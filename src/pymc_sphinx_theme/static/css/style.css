@@ -1,3 +1,7 @@
 .supportbutton a {
  color: var(--pst-color-link);
 }
+
+.nav-link.nav-external:after {
+  content: none;
+}
