@@ -1,5 +1,25 @@
-<form class="bd-search d-flex align-items-center" action="https://www.pymc.io/search.html" method="get">
+{# A bootstrap-styled field that will direct to the `search.html` page when submitted #}
+{# It is copied over from pydata-sphinx-theme to hijack the search bar in readthedocs subprojects to search over all subprojects like in main website #}
+
+{% if theme_use_search_override %}
+<form class="bd-search d-flex align-items-center"
+      action="https://www.pymc.io/search.html"
+      method="get">
+{% else %}
+<form class="bd-search d-flex align-items-center"
+      action="{{ pathto('search') }}"
+      method="get">
+{% endif %}
   <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="{{ _(theme_search_bar_text) }}" aria-label="{{ theme_search_bar_text }}" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="{{ _(theme_search_bar_text) }}"
+         aria-label="{{ theme_search_bar_text }}"
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form>
