@@ -1,4 +1,4 @@
-{% if sourcename is defined and theme_use_edit_page_button==true and page_source_suffix and "generated" not in sourcename %}
+{% if sourcename is defined and page_source_suffix and "generated" not in sourcename %}
   {% set src = sourcename.split('.') %}
   <div class="tocsection editthispage">
     <a href="{{ get_edit_provider_and_url()[1] }}">
