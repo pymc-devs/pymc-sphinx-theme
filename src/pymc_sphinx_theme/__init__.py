@@ -1,6 +1,6 @@
 """A thin sphinx theme to customize pydata-sphinx-theme consistently cross PyMC websites."""
 
-__version__ = "0.1"
+__version__ = "0.13.0"
 
 from pathlib import Path
 
