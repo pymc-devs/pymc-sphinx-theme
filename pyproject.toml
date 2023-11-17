@@ -24,8 +24,8 @@ classifiers = [
 ]
 dynamic = ["version", "description"]
 dependencies = [
-  "pydata-sphinx-theme>=0.13.0,<0.14",
-  "sphinx>=5,<7",
+  "pydata-sphinx-theme>=0.14.0,<0.15",
+  "sphinx>=5",
 ]
 
 [tool.flit.module]
