@@ -1,0 +1,43 @@
+{%- extends "pydata_sphinx_theme/search.html" %}
+
+{% block docs_body %}
+  <div class="bd-search-container">
+    <h1>{{ _("Search") }}</h1>
+    <noscript>
+      <div class="admonition error">
+        <p class="admonition-title">{% trans %}Error{% endtrans %}</p>
+        <p>{% trans %}Please activate JavaScript to enable the search functionality.{% endtrans %}</p>
+      </div>
+    </noscript>
+    {% if theme_use_search_override %}
+    <form class="bd-search d-flex align-items-center"
+          action="https://www.pymc.io/search.html"
+          method="get">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="search"
+            class="form-control"
+            name="q"
+            id="search-input-global"
+            placeholder="Search across all PyMC sites..."
+            aria-label="Search across all PyMC sites"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false"/>
+      <span class="search-button__kbd-shortcut">Global&nbsp;search</span>
+    </form>
+    {% endif %}
+    <br>
+    {% include "../components/search-field.html" %}
+    <div id="search-results"></div>
+  </div>
+  <script>
+    // Activate the search field on page load
+    let searchInput = document.querySelector("form.bd-search input");
+    if (searchInput) {
+        searchInput.focus();
+        searchInput.select();
+        console.log("[PST]: Set focus on search field.");
+    }
+  </script>
+{% endblock docs_body %}
