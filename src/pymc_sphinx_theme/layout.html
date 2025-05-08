@@ -1,0 +1,7 @@
+{%- extends "pydata_sphinx_theme/layout.html" %}
+{%- block extrahead %}
+  {{ super() }}
+  {% if pagename == 'search' %}
+    <script src="{{ pathto('_static/js/readthedocs.js', 1) }}"></script>
+  {% endif %}
+{%- endblock extrahead %}

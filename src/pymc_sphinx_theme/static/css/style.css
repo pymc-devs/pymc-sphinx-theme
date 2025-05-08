@@ -5,3 +5,83 @@
 .nav-link.nav-external:after {
   content: none;
 }
+
+.global-search {
+  border: 1px solid var(--pst-color-border);
+  border-radius: .25rem;
+  color: var(--pst-color-text-base);
+  background-color: var(--pst-color-background);
+  gap: .5rem;
+  padding-left: .5rem;
+  position: relative;
+}
+
+.global-search input.form-control {
+  background-color: var(--pst-color-background);
+  border: none;
+  color: var(--pst-color-text-base);
+}
+
+/*Background should always be same color regardless of active or not*/
+.global-search:active {
+  background-color: var(--pst-color-background);
+  color: var(--pst-color-text-muted);
+}
+
+/*Hoist the focus ring from the input field to its parent*/
+.global-search:focus-within {
+  box-shadow: 0 0 0 .25rem rgba(13,110,253,.25);
+}
+
+.global-search input:focus {
+  box-shadow: none;
+}
+
+.global-search .icon {
+    position: absolute;
+    color: var(--pst-color-border);
+    left: 25px;
+}
+
+.global-search {
+  .fa-solid.fa-magnifying-glass {
+    position: absolute;
+    left: calc((2.5rem - 0.7em) / 2);
+    color: var(--pst-color-text-muted);
+  }
+
+  input.form-control {
+    background-color: var(--pst-color-background);
+    color: var(--pst-color-text-base);
+    border: none;
+
+    /*// Inner-text of the search bar*/
+    &::placeholder {
+      color: var(--pst-color-text-muted);
+    }
+
+    /*// Remove the little "x" that pops up when you start typing*/
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-decoration {
+      appearance: none;
+    }
+
+    &:focus,
+    &:focus-visible {
+      color: var(--pst-color-text-muted);
+    }
+  }
+}
+
+/*Shows off the keyboard shortcuts for the button*/
+.global-search .search-button__kbd-shortcut {
+    display: none;
+    margin-inline-end: 0.5rem;
+    color: var(--pst-color-border);
+}
+
+@media (min-width: 720px) {
+  .global-search .search-button__kbd-shortcut {
+    display: flex;
+  }
+}

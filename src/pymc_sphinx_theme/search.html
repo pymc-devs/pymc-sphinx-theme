@@ -10,11 +10,15 @@
       </div>
     </noscript>
     {% if theme_use_search_override %}
-    <form class="bd-search d-flex align-items-center"
+    <form class="global-search d-flex align-items-center"
+        {% if github_repo == "pymc.io" %}
+          action=""
+        {% else %}
           action="https://www.pymc.io/search.html"
+        {% endif %}
           method="get">
       <i class="fa-solid fa-magnifying-glass"></i>
-      <input type="search"
+      <input type="global-search"
             class="form-control"
             name="q"
             id="search-input-global"
